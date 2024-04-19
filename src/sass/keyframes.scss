@@ -1,0 +1,271 @@
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    @include crossBrowserPrefix(transform, rotate(0deg));
+  }
+  100% {
+    @include crossBrowserPrefix(transform, rotate(360deg));
+  }
+}
+
+@keyframes text-clip-movement {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes text-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  25% {
+    opacity: 0.1;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  35% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.2;
+  }
+  45% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.05;
+  }
+  55% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.2;
+  }
+  65% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.4;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  95% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes emoji-right-one {
+  0% {
+    @include crossBrowserPrefix(transform, translateX(0) rotate(0deg));
+  }
+  50% {
+    @include crossBrowserPrefix(transform, translateX(0.5rem) rotate(18deg));
+  }
+  100% {
+    @include crossBrowserPrefix(transform, translateX(0) rotate(0deg));
+  }
+}
+@keyframes emoji-right-two {
+  0% {
+    @include crossBrowserPrefix(transform, translateX(-3px) translateY(0));
+  }
+  50% {
+    @include crossBrowserPrefix(transform, translateX(-3px) translateY(-3px));
+  }
+  100% {
+    @include crossBrowserPrefix(transform, translateX(-3px) translateY(0));
+  }
+}
+@keyframes emoji-up-three {
+  0% {
+    @include crossBrowserPrefix(transform, translateX(-6px) translateY(0));
+  }
+  50% {
+    @include crossBrowserPrefix(transform, translateX(-6px) translateY(3px));
+  }
+  100% {
+    @include crossBrowserPrefix(transform, translateX(-6px) translateY(0));
+  }
+}
+
+@keyframes highlight-start-process-button {
+  0%,
+  100% {
+    @include crossBrowserPrefix(transform, scale(1));
+    opacity: 1;
+  }
+  10% {
+    @include crossBrowserPrefix(transform, scale(1));
+    opacity: 0.3;
+  }
+  20% {
+    @include crossBrowserPrefix(transform, scale(1.25));
+    opacity: 0.9;
+  }
+  25% {
+    @include crossBrowserPrefix(transform, scale(1.25));
+    opacity: 0.1;
+  }
+  30% {
+    @include crossBrowserPrefix(transform, scale(1.25));
+    opacity: 0.5;
+  }
+  35% {
+    @include crossBrowserPrefix(transform, scale(1.25));
+    opacity: 1;
+  }
+  40% {
+    @include crossBrowserPrefix(transform, scale(1.25));
+    opacity: 0.2;
+  }
+  45% {
+    @include crossBrowserPrefix(transform, scale(1.25));
+    opacity: 0.8;
+  }
+  50% {
+    @include crossBrowserPrefix(transform, scale(1.25));
+    opacity: 0.05;
+  }
+  55% {
+    @include crossBrowserPrefix(transform, scale(1.25));
+    opacity: 0.9;
+  }
+  60% {
+    @include crossBrowserPrefix(transform, scale(1.25));
+    opacity: 0.2;
+  }
+  65% {
+    @include crossBrowserPrefix(transform, scale(1.25));
+    opacity: 1;
+  }
+  70% {
+    @include crossBrowserPrefix(transform, scale(1.25));
+    opacity: 0.4;
+  }
+  75% {
+    @include crossBrowserPrefix(transform, scale(1.25));
+    opacity: 0.6;
+  }
+  80% {
+    @include crossBrowserPrefix(transform, scale(1.25));
+    opacity: 0.3;
+  }
+  85% {
+    @include crossBrowserPrefix(transform, scale(1));
+    opacity: 0.7;
+  }
+  90% {
+    @include crossBrowserPrefix(transform, scale(1));
+    opacity: 0.2;
+  }
+  95% {
+    @include crossBrowserPrefix(transform, scale(1));
+    opacity: 0.9;
+  }
+}
+
+@keyframes animate-dialog-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animate-dialog-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes animate-letter {
+  from {
+    @include crossBrowserPrefix(transform, scale(0) rotate(0deg));
+    opacity: 0;
+  }
+  20% {
+    @include crossBrowserPrefix(transform, scale(1) rotate(0deg));
+    opacity: 1;
+  }
+  50% {
+    @include crossBrowserPrefix(transform, scale(1.5) rotate(0deg));
+    opacity: 1;
+  }
+  to {
+    @include crossBrowserPrefix(transform, scale(1) rotate(360deg));
+    opacity: 1;
+  }
+}
+
+@keyframes animate-fieldset-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animate-fieldset-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0%,
+  32%,
+  64%,
+  100% {
+    opacity: 0;
+  }
+  16%,
+  48%,
+  80% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,30 @@
+@mixin crossBrowserPrefix($property, $css) {
+  -webkit-#{$property}: #{$css};
+  -moz-#{$property}: #{$css};
+  -ms-#{$property}: #{$css};
+  -o-#{$property}: #{$css};
+  #{$property}: #{$css};
+}
+// ? example
+// ? @include crossBrowserPrefix(animation, magic 3s infinite linear alternate);
+// ? @include crossBrowserPrefix(background-clip, text);
+
+@mixin uninteractable {
+  pointer-events: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+@mixin hideWithAlly {
+  height: 1px;
+  left: -9999px;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  width: 1px;
+}
