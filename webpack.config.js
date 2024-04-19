@@ -10,7 +10,7 @@ module.exports = (env, argv) => {
   return {
     mode: isProduction ? 'production' : 'development',
     entry: {
-      index: './src/displayStuff.js',
+      index: './src/app.js',
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
