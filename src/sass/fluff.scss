@@ -12,13 +12,14 @@ body {
 }
 
 dialog {
+  aspect-ratio: 1 / 1;
   -webkit-backdrop-filter: blur(0.5rem);
   backdrop-filter: blur(0.5rem);
   background: rgba(255, 255, 255, 0.05);
   border: 1px ridge rgba(255, 255, 255, 0.18);
   border-radius: 99px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  max-height: 55vh;
+  min-height: min-content;
   overflow: hidden;
   padding: 3rem;
   place-items: center;
@@ -37,13 +38,12 @@ dialog {
     #dialog-heading {
       color: var(--color-text-primary);
       font-size: clamp(1rem, 3vw, 2.5rem);
-      text-shadow: 9px 9px rgba(33, 33, 33, 0.666);
+      text-shadow: 6px 6px rgba(33, 33, 33, 0.666);
     }
 
     .ds-close-button {
       font-size: 1.5rem;
       height: min-content;
-      text-shadow: 9px 9px rgba(33, 33, 33, 0.666);
 
       &:hover {
         transform: scale(1.25);
@@ -78,9 +78,11 @@ button {
 #open-modal-button {
   border: 2px dashed var(--color-text-primary);
   border-radius: 100vw;
+  font-size: clamp(0.813rem, 2vw, 1rem);
   overflow: hidden;
   padding: 0.25rem 1.5rem;
   position: relative;
+  text-shadow: 0 0 6px black;
   text-transform: uppercase;
   transition: transform 234ms ease-in-out;
 

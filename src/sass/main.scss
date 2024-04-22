@@ -29,7 +29,7 @@
 dialog {
   &[open] {
     animation: animate-dialog-in 0.666s ease-in-out;
-    display: grid;
+    display: grid; 
   }
 
   &.closing {
