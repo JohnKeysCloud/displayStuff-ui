@@ -35,7 +35,7 @@ dialog {
 
     #dialog-heading {
       color: var(--color-text-primary);
-      font-size: 2.5rem;
+      font-size: clamp(1rem, 3vw, 2.5rem);
       text-shadow: 9px 9px rgba(33, 33, 33, 0.666);
     }
 
