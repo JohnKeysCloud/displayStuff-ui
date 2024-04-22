@@ -1,5 +1,27 @@
-import { dsCreateDialogController, dsCreateLightboxController } from "./displayStuff";
+import { dsCreateDialogController } from "./displayStuff";
 
-const content = document.getElementById('content');
+import { initializeModalContent, addModalListeners } from './fluff'; 
+import './sass/main.scss';
 
-content.appendChild(document.createTextNode('Hello, World!'));
+function initApp() {
+  initializeModalContent();
+  window.addEventListener('load', addModalListeners);
+};
+
+initApp();
+
+// 💭 --------------------------------------------------------------
+// 💭 --------------------------------------------------------------
+// 💭 --------------------------------------------------------------
+
+// ? displayStuff.js
+// ? <dialog> demo:
+
+const dialog = document.querySelector('dialog');
+const dialogController = dsCreateDialogController(dialog);
+
+const openModalButton = document.querySelector('#open-modal-button');
+
+openModalButton.addEventListener('click', () => {
+  dialogController.openDialog();
+});

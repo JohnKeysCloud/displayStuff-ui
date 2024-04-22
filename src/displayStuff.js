@@ -20,11 +20,29 @@ function examineCloseButton(closeButton, selector) {
 // 💭 modalStuff
 // 💭 --------------------------------------------------------------
 
+function toggleEscapeKeyListener(modalState, closeButton) {
+	if (!modalState) throw new Error(`Invalid modal state object passed to toggleEscapeKeyListener function.`);
+	if (!closeButton) throw new Error(`Invalid close button object passed to toggleEscapeKeyListener function.`);
+
+	const modifiedEscapeKeyCallback = (event) => {
+		if (event.key === 'Escape') {
+			event.preventDefault();
+			closeButton.click();
+		}
+	};
+
+	if (modalState.escapeKeyListenerAttached) {
+		window.removeEventListener('keydown', modifiedEscapeKeyCallback);
+	} else {
+		window.addEventListener('keydown', modifiedEscapeKeyCallback);
+	}
+}
+
 function toggleModalState(modalState) {
 	if (!modalState) throw new Error(`Invalid modal state object passed to toggleModalState function.`);
-	if (!modalState.closeButtonState) throw new Error(`Invalid close button state object passed to toggleModalState function.`);
 
 	modalState.listenerAttached = !modalState.listenerAttached;
+	modalState.escapeKeyListenerAttached = !modalState.escapeKeyListenerAttached;
 	modalState.closeButtonState.listenerAttached = !modalState.closeButtonState.listenerAttached;
 }
 
@@ -104,6 +122,7 @@ export function dsCreateDialogController(dialogElement) {
 
 	let dialogState = {
 		listenerAttached: false,
+		escapeKeyListenerAttached: false,
 		closeButtonState: {
 			listenerAttached: false,
 		}
@@ -118,6 +137,7 @@ export function dsCreateDialogController(dialogElement) {
 		closeButton.removeEventListener('click', closeDialog);
 		dialogElement.removeEventListener('animationend', sanitizeDialog);
 
+		toggleEscapeKeyListener(dialogState, closeButton);
 		toggleModalState(dialogState);
 	}
 
@@ -142,6 +162,7 @@ export function dsCreateDialogController(dialogElement) {
 		toggleModalAttributes(dialogElement);
 		closeButton.addEventListener('click', closeDialog);
 
+		toggleEscapeKeyListener(dialogState, closeButton);
 		toggleModalState(dialogState);
 	}
 
@@ -205,6 +226,7 @@ export function dsCreateLightboxController(lightboxElement) {
 
 	let lightboxState = {
 		listenerAttached: false,
+		escapeKeyListenerAttached: false,
 		closeButtonState: {
 			listenerAttached: false,
 		}
@@ -219,6 +241,7 @@ export function dsCreateLightboxController(lightboxElement) {
 		closeButton.removeEventListener('click', closeLightbox);
 		lightboxElement.removeEventListener('animationend', cleanLightBox);
 
+		toggleEscapeKeyListener(lightboxState, closeButton);
 		toggleModalState(lightboxState);
 	}
 
@@ -242,7 +265,8 @@ export function dsCreateLightboxController(lightboxElement) {
 
 		toggleModalAttributes(lightboxElement);
 		closeButton.addEventListener('click', closeLightbox);
-
+		
+		toggleEscapeKeyListener(lightboxState, closeButton);
 		toggleModalState(lightboxState);
 	}
 

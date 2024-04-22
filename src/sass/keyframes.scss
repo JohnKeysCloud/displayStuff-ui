@@ -1,3 +1,7 @@
+
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -199,23 +203,6 @@
   95% {
     @include crossBrowserPrefix(transform, scale(1));
     opacity: 0.9;
-  }
-}
-
-@keyframes animate-dialog-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes animate-dialog-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
   }
 }
 

@@ -1,3 +1,32 @@
+:root {
+  // *  COLORS
+  --cyclone-silver: hsl(0, 0%, 81%);
+  --neon-pink: rgb(255, 10, 210);
+  --neon-red: hsl(348, 100%, 51%);
+  --neon-blue: #25f8e7;
+  --neon-green: chartreuse;
+  --neon-orange: hsl(38.8, 100%, 50%);
+  --neon-yellow: hsl(60, 100%, 50%);
+
+  // * FONT SIZES
+  --h1-fs: clamp(3rem, 9vw, 6rem);
+  --h2-fs: clamp(2.5rem, 8vw, 5rem);
+  --h3-fs: clamp(1.5rem, 3.5vw, 1.75rem);
+  --h4-fs: clamp(0.813rem, 2vw, 1.25rem);
+  --body-fs: clamp(0.75rem, 1.25vw, 0.813rem);
+
+  // * SECTION
+  --section-margin-bottom: 6rem;
+  --section-padding-inline: 1.5rem;
+
+  &.light-mode {
+    --background-color: lightblue;
+    --color-text-primary: rgb(33, 33, 33);
+  }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 *,
 *::before,
 *::after {

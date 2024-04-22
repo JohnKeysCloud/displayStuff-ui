@@ -1,0 +1,88 @@
+:root {
+  --background: #1e0124;
+  --background: url('../assets/space.jpg') center/cover no-repeat;
+  --color-text-primary: ghostwhite;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background: var(--background);
+  color: whitesmoke;
+}
+
+dialog {
+  -webkit-backdrop-filter: blur(0.5rem );
+  backdrop-filter: blur(0.5rem );
+  background: rgba( 255, 255, 255, 0.05 );
+  border: 1px ridge rgba( 255, 255, 255, 0.18 );
+  border-radius: 99px;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  overflow: hidden;
+  padding: 3rem;
+  place-items: center;
+  position: relative;
+  row-gap: 1.5rem;
+  z-index: 1;
+
+  #dialog-header {
+    align-items: center;
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+    line-height: 1;
+    width: 100%;
+
+    #dialog-heading {
+      color: var(--color-text-primary);
+      font-size: 0.813rem;
+      text-shadow: 3px 3px rgba(33, 33, 33, 0.666);
+    }
+
+    .ds-close-button {
+      font-size: 1.5rem;
+      height: min-content;
+      text-shadow: 9px 9px 6px rgba(33, 33, 33, 0.666);
+
+      &:hover {
+        transform: scale(1.25);
+      }
+    }
+  }
+}
+
+button {
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+#open-modal-button {
+  border: 2px dashed var(--color-text-primary);
+  border-radius: 100vw; 
+  padding: 0.25rem 1.5rem;
+  text-transform: uppercase;
+}
+
+#c-container {
+  display: grid;
+  place-items: center;
+
+  pre {
+    @include uninteractable;
+
+    --font-size: clamp(6.6px, 1.25vw, 18px);
+
+    color: var(--color-text-primary);
+    font-family: monospace;
+    font-size: var(--font-size);
+    line-height: var(--font-size);
+    letter-spacing: unset;
+    white-space: pre;
+  }
+}
+
+.character.non-whitespace {
+  // animation: spin 9s infinite linear; 
+  display: inline-block;
+  transition: all 9s ease-in-out;
+}
