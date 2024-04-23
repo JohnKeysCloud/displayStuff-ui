@@ -1,5 +1,5 @@
 # display-stuff-ui.js
-DisplayStuff.js is a simple controller for managing modal elements. It provides methods to open and close dialogs and lightboxes. The controller initializes modals with necessary accessibility attributes and handles animations for opening and closing.
+display-stuff-ui.js is a simple controller for managing modal elements. It provides methods to open and close dialogs and lightboxes. The controller initializes modals with necessary accessibility attributes and handles animations for opening and closing.
 
 ## Installation
 
