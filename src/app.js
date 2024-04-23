@@ -1,4 +1,4 @@
-import { dsCreateDialogController } from "./displayStuff";
+import { dsCreateDialogController } from "./display-stuff-ui";
 
 import { initializeModalContent, addModalListeners } from './fluff'; 
 import './sass/main.scss';

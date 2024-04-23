@@ -1,34 +1,33 @@
-# displayStuff.js
-  - Creates a controller object for managing a modal element, providing methods to open and close the dialog.
-  -  function initializes the dialog as a modal, sets up necessary accessibility attributes,
- * and ensures that the dialog can be properly managed through its lifecycle.
- *
- * Its intended use is to provide a simple way to manage the visibility of a dialog element.
- * It abstracts out the pesky animating in-and-out conundrum of modal elements with a CSS property, display of none (to block/flex/grid/etc.).
+# display-stuff-ui.js
+DisplayStuff.js is a simple controller for managing modal elements. It provides methods to open and close dialogs and lightboxes. The controller initializes modals with necessary accessibility attributes and handles animations for opening and closing.
 
 ## Installation
 
-Install with npm:
-
-	$ npm install display-stuff-ui
-
-## Usage and Examples
-
-1. Import 'dsCreateDialogController' into your project: 
-```javascript
-import * as displayStuff from './displayStuff.js';
-// OR
-import {dsCreateDialogController, dsCreateLightboxController } from './displayStuff.js';
+Install via npm:
+```bash
+npm install display-stuff-ui
 ```
 
-2. Create your modal element (HTML dialog or other). Ensure it has a close button with a class of 'ds-close-button' nested within. All modals should have a close button, hence this requirement.
+## Usage
+
+1. Import the controller: 
+Import either 'dsCreateDialogController' or 'dsCreateLightboxController' into your project: 
+```javascript
+import * as displayStuff from './display-stuff-ui';
+// OR
+import {dsCreateDialogController, dsCreateLightboxController } from './display-stuff-ui';
+```
+
+2. Prepare the Modal:
+Create your modal element in HTML, ensuring it has a close button with a class of ds-close-button.
 ```html 
 <dialog>
   <button class="ds-close-button">✕</button>
 </dialog>
 ```    
 
-3. Ensure the minimal styles are applied via CSS or your pre-processor of choice.:
+3. Define Basic Styles:
+Use CSS to add animations for opening and closing dialogs.
 ```scss
 @keyframes animate-dialog-in {
   from {
@@ -73,26 +72,20 @@ dialog {
 }
 ```
 
-3. Pass your modal element into the appropriate imported function (If your modal is an HTML dialog element, pass it into 'dsCreateDialogController', else 'dsCreateLightboxController'):
+4. Initialize the Controller:
+Pass your modal element into the appropriate function.
 ```javascript   
-// Access the functions via the namespace
 const dialogElement = document.querySelector('dialog');
-const lightboxElement = document.querySelector('.lightbox');
+const lightboxElement = document.querySelector('.myLightbox');
 
 const dialogController = displayStuff.dsCreateDialogController(dialogElement);
 const lightboxController = displayStuff.dsCreateLightboxController(lightboxElement);
-// OR
-const dialogController = dsCreateDialogController(dialogElement);
-const lightboxController = dsCreateLightboxController(lightboxElement);
 ```
 
-5. Set up methods for opening/closing your modal (ex: a button with an event listener attached):
+5. Open/Close the Modal:
+Set up event listeners to control the opening and closing of your modal.
 ```html
 <button class="open-modal-button" >Open Modal</button>
-
-<dialog>
-  <button class="ds-close-button">✕</button>
-</dialog>
 ```
 ```javascript
 const openModalButton = document.querySelector('.open-modal-button');
@@ -100,11 +93,18 @@ const openModalButton = document.querySelector('.open-modal-button');
 openModalButton.addEventListener('click', () => {
   dialogController.openDialog();
 });
-
 ```
 
-NOTE: When the modal is opened, the 'close' button nested within it is initialized to close the modal on click! The same method is applied when the 'escape' key is pressed.
+### Additional Information
+* When the modal is opened, the "close" button is set up to close it via the controller's closeDialog() or closeLightbox() method. The same applies when the "escape" key is pressed.
 
-## License
+* After attaching the controller, you can open or close the modal using openDialog() or closeDialog().
 
+#### License
 ISC
+
+##### Author
+display-stuff-io was created by Cyclone Studios in New York City.
+
+###### Contributors
+* Cyclone Studios
