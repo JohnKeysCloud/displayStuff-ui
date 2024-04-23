@@ -11,7 +11,7 @@ npm install display-stuff-ui
 ## Usage
 
 1. Import the controller: 
-Import either 'dsCreateDialogController' or 'dsCreateLightboxController' into your project: 
+Import either 'dsCreateDialogController' or 'dsCreateLightboxController' into your project.
 ```javascript
 import * as displayStuff from './display-stuff-ui';
 // OR
@@ -96,7 +96,7 @@ openModalButton.addEventListener('click', () => {
 ```
 
 ### Additional Information
-* When the modal is opened, the "close" button is set up to close it via the controller's closeDialog() or closeLightbox() method. The same applies when the "escape" key is pressed.
+* When the modal is opened, the "close" button is set up to close it automatically via the controller's closeDialog() or closeLightbox() method. The same applies when the "escape" key is pressed.
 
 * After attaching the controller, you can open or close the modal using openDialog() or closeDialog().
 
@@ -104,7 +104,7 @@ openModalButton.addEventListener('click', () => {
 ISC
 
 ##### Author
-display-stuff-io was created by Cyclone Studios in New York City.
+display-stuff-ui was created by Cyclone Studios in New York City.
 
 ###### Contributors
 * Cyclone Studios
