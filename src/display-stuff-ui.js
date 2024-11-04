@@ -20,9 +20,9 @@ function examineCloseButton(closeButton, selector) {
 // 💭 modalStuff
 // 💭 --------------------------------------------------------------
 
-function toggleEscapeKeyListener(isListenerAttached, closeButton) {
+function toggleEscapeKeyListener(isListenerAttached, closeButton, dialogOrLightBoxState) {
 	const modifiedEscapeKeyCallback = (event) => {
-		if (event.key === 'Escape' && modalState.open) {
+		if (event.key === 'Escape' && dialogOrLightBoxState.open) {
 			event.preventDefault();
 			closeButton.click();
 		}
@@ -137,7 +137,7 @@ export function dsCreateDialogController(dialogElement) {
 		
 		toggleModalAttributes(dialogElement);
 		toggleCloseButtonListener(dialogState.closeButtonState.listenerAttached, closeButton, closeDialog);
-		toggleEscapeKeyListener(dialogState.escapeKeyListenerAttached, closeButton);
+		toggleEscapeKeyListener(dialogState.escapeKeyListenerAttached, closeButton, dialogState);
 
 		dialogElement.removeEventListener('animationend', sanitizeDialog);
 
@@ -164,7 +164,7 @@ export function dsCreateDialogController(dialogElement) {
 		
 		toggleModalAttributes(dialogElement);
 		toggleCloseButtonListener(dialogState.closeButtonState.listenerAttached, closeButton, closeDialog);
-		toggleEscapeKeyListener(dialogState.escapeKeyListenerAttached, closeButton);
+		toggleEscapeKeyListener(dialogState.escapeKeyListenerAttached, closeButton, dialogState);
 		
 		toggleModalState(dialogState);
 	}
@@ -242,7 +242,7 @@ export function dsCreateLightboxController(lightboxElement) {
 
 		toggleModalAttributes(lightboxElement);
 		toggleCloseButtonListener(lightboxState.closeButtonState.listenerAttached, closeButton, closeLightbox);
-		toggleEscapeKeyListener(lightboxState.escapeKeyListenerAttached, closeButton);
+		toggleEscapeKeyListener(lightboxState.escapeKeyListenerAttached, closeButton, lightboxState);
 
 		lightboxElement.removeEventListener('animationend', cleanLightBox);
 
@@ -269,7 +269,7 @@ export function dsCreateLightboxController(lightboxElement) {
 
 		toggleModalAttributes(lightboxElement);
 		toggleCloseButtonListener(lightboxState.closeButtonState.listenerAttached, closeButton, closeLightbox);
-		toggleEscapeKeyListener(lightboxState.escapeKeyListenerAttached, closeButton);
+		toggleEscapeKeyListener(lightboxState.escapeKeyListenerAttached, closeButton, lightboxState);
 
 		toggleModalState(lightboxState);
 	}
